@@ -286,7 +286,7 @@ DiagnosticArrayMsg io_comm_rx::RxMessage::DiagnosticArrayCallback()
     gnss_status.hardware_id = serialnumber;
     gnss_status.name = "gnss";
     gnss_status.message =
-        "Quality Indicators (from 0 for low quality to 10 for high quality, 15 if unknown)";
+        std::to_string(last_receiverstatus_.rx_error);
     msg.status.push_back(gnss_status);
     return msg;
 };

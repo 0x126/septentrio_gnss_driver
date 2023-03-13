@@ -658,6 +658,10 @@ void io_comm_rx::Comm_IO::configureRx()
                << "\x0D";
             send(ss.str());
         }
+
+        std::stringstream ss;
+        ss << "lif, error" << "\x0D";
+        send(ss.str());
     }
 
     // Configuring the corrections connection
